@@ -26,14 +26,14 @@ The sources identify three primary strategies for implementing two pointers:
 
 - **Trigger-Based Pointers:**
   - **How it works:** One pointer moves independently until a specific condition is met, which then "triggers" the second pointer to start moving.
-  - **Example:** Finding the $n$-th node from the end of a linked list. You move the first pointer $n$ steps ahead, then start the second pointer at the head; when the first hits the end, the second is at the target.
+  - **Example:** Finding the n-th node from the end of a linked list. You move the first pointer n steps ahead, then start the second pointer at the head; when the first hits the end, the second is at the target.
 
 ### 3. Efficiency and Complexity
 
 The primary motivation for using Two Pointers is to optimize performance:
 
-- **Time Complexity:** It often reduces $O(N^2)$ brute-force solutions (nested loops checking all pairs) to **$O(N)$ linear time**, as each element is typically visited only once or twice.
-- **Space Complexity:** Because it only requires two integer variables to track indices, it usually operates in **$O(1)$ constant space**, making it more memory-efficient than patterns that require hashmaps or sets.
+- **Time Complexity:** It often reduces O(N^2) brute-force solutions (nested loops checking all pairs) to **O(N) linear time**, as each element is typically visited only once or twice.
+- **Space Complexity:** Because it only requires two integer variables to track indices, it usually operates in **O(1) constant space**, making it more memory-efficient than patterns that require hashmaps or sets.
 
 ### 4. How to Recognize the Pattern
 
