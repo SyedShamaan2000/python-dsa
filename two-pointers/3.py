@@ -58,7 +58,7 @@ print(sol.brute_force([0, 1, 2, 2, 3, 0, 4, 2], 2))
 
 print(sol.swap_method([0, 1, 2, 2, 3, 0, 4, 2], 2))
 # Time Complexity: O(n)
-# Why? Each element is visited at most once. 
+# Why? Each element is visited at most once.
 # The total number of operations is proportional to the length of the array.
 # Space Complexity: O(1)
 # Why? We only used two integer variables (i and n).
