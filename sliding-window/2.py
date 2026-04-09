@@ -58,7 +58,7 @@ class Solution:
 sol = Solution
 
 print(sol.brute_force_using_for_loop([1, 2, 3, 1, 2, 3], 2))
-# Time Complexity: O(n²)
+# Time Complexity: O(n^2)
 # Why? Two nested loops — the outer runs n times and the inner runs up to n times per iteration,
 # comparing every possible pair (i, j) in the array.
 # Space Complexity: O(1)
