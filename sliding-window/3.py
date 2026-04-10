@@ -41,6 +41,22 @@ class Solution:
 
         return max_len
 
+    def sliding_window_using_set(s: str) -> int:
+        if not s:
+            return 0
+
+        sett = set()
+        max_len: int = 1
+        left: int = 0
+
+        for right in range(len(s)):
+            while s[right] in sett:
+                sett.remove(s[left])
+                left += 1
+            sett.add(s[right])
+            max_len = max(max_len, right - left + 1)
+        return max_len
+
 
 sol = Solution
 print(sol.brute_force("pprpewskwyt"))
@@ -59,3 +75,5 @@ print(sol.sliding_window("abcabcbb"))
 # Space Complexity: O(min(n, a))
 # Why? char_index holds at most `a` entries (alphabet size, e.g. 128 for ASCII).
 # Improvement: O(n²) → O(n) in time; space stays the same but is tightly bounded.
+print(sol.sliding_window_using_set("pprpewskwyt"))
+print(sol.sliding_window_using_set("abcabcbb"))
