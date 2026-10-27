@@ -6,7 +6,7 @@ Given a string s, find the length of the longest substring without duplicate cha
 
 
 class Solution:
-    def brute_force(s: str) -> int:
+    def brute_force(self, s: str) -> int:
         if not s:
             return 0
 
@@ -23,7 +23,7 @@ class Solution:
 
         return max_len
 
-    def sliding_window(s: str) -> int:
+    def sliding_window(self, s: str) -> int:
         if not s:
             return 0
         char_index = {}  # maps char -> its most recent index
@@ -41,7 +41,7 @@ class Solution:
 
         return max_len
 
-    def sliding_window_using_set(s: str) -> int:
+    def sliding_window_using_set(self, s: str) -> int:
         if not s:
             return 0
 
@@ -58,7 +58,7 @@ class Solution:
         return max_len
 
 
-sol = Solution
+sol = Solution()
 print(sol.brute_force("pprpewskwyt"))
 print(sol.brute_force("abcabcbb"))
 # Time Complexity:  O(n^2)
