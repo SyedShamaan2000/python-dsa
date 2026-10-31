@@ -9,7 +9,7 @@ in the array such that nums[i] == nums[j] and abs(i - j) <= k.
 
 class Solution:
     # Method rejected
-    def brute_force_using_for_loop(arr, k) -> bool:
+    def brute_force_using_for_loop(self, arr, k) -> bool:
         for i in range(len(arr) - 1):
             for j in range(i + 1, len(arr)):
                 print(
@@ -21,7 +21,7 @@ class Solution:
         return False
 
     # Method rejected
-    def brute_force_using_while_loop(arr, k) -> bool:
+    def brute_force_using_while_loop(self, arr, k) -> bool:
         n: int = len(arr)
         i = 0
         j: int = i + 1
@@ -38,7 +38,7 @@ class Solution:
 
         return False
 
-    def sliding_window(arr, k) -> bool:
+    def sliding_window(self, arr, k) -> bool:
         window = set()
 
         for i in range(len(arr)):
@@ -55,7 +55,7 @@ class Solution:
         return False
 
 
-sol = Solution
+sol = Solution()
 
 print(sol.brute_force_using_for_loop([1, 2, 3, 1, 2, 3], 2))
 # Time Complexity: O(n^2)
