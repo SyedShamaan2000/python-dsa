@@ -1,6 +1,3 @@
-from typing import Optional
-
-
 # Singly Linked List
 class LinkedList:
     def __init__(self, val: int = 0, next=None):
@@ -59,7 +56,7 @@ class ListNode:
         self.next = next
 
 
-def build(values: list) -> Optional[ListNode]:
+def build(values: list) -> ListNode | None:
     dummy = ListNode(0)
     curr = dummy
     for v in values:

@@ -1,6 +1,6 @@
 nums = [1, 2, 3, 4, 5]
 
-for i in range(0, len(nums)):
+for i in range(len(nums)):
     print(nums[i])
     print(nums[len(nums) - 1])
     print(nums[i : i + 1])
@@ -8,6 +8,6 @@ for i in range(0, len(nums)):
 
 s = "Hello, World!"
 
-for i in range(0, len(s)):
+for i in range(len(s)):
     print(s[i])
     print(s[i : i + 1])

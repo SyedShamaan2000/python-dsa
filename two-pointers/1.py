@@ -13,7 +13,7 @@ find if there exists any pair of elements (A[i], A[j]) such that their sum is eq
 # Example I have in my mind: array - [1, 3, 2, 6, 4], target - 9
 class Solution:
     # Brute Force
-    def two_sum_bf(self, nums: list[int], target: int) -> dict:
+    def two_sum_bf(self, nums: list[int], target: int) -> dict | None:
         # Iterate through each number in the list
         for i in range(len(nums)):
             # For each number, check every subsequent number
@@ -23,7 +23,7 @@ class Solution:
                     return {"elements": [nums[i], nums[j]], "indices": [i, j]}
 
     # Two pointers
-    def two_sum_tp(self, nums: list[int], target: int) -> dict:
+    def two_sum_tp(self, nums: list[int], target: int) -> dict | None:
         # Create a list of pairs: (value, original_index)
         # This ensures we don't lose the position after sorting.
         indexed_nums: list = []
@@ -51,7 +51,7 @@ class Solution:
                 right -= 1  # Need a smaller sum
 
     # Using HashMap
-    def two_sum_hm(self, nums, target) -> dict:
+    def two_sum_hm(self, nums, target) -> dict | None:
         # map to store: {value: original_index}
         seen: dict = {}
 
@@ -63,7 +63,7 @@ class Solution:
             if complement in seen:
                 # If found, return the index of the complement and current index
                 return {
-                    "elements": [nums[seen[complement]], nums[i]],
+                    "elements": [nums[seen[complement]], val],
                     "indices": [seen[complement], i],
                 }
 

@@ -5,12 +5,13 @@
 
 # Output: [1,2]
 
+
 from time_decorator import time_decorator
-from typing import List
+
 
 class Solution:
     @time_decorator
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         # Create a frequency dictionary to count occurrences of each number
         frequency_dict = {}
         for num in nums:
@@ -24,7 +25,9 @@ class Solution:
         print(sorted(frequency_dict.items(), key=lambda item: item[1], reverse=True))
         # key=lambda item: item[1] means we are sorting based on the frequency (the second item in the tuple)
         # reverse=True means we want the highest frequency first
-        sorted_items = sorted(frequency_dict.items(), key=lambda item: item[1], reverse=True)
+        sorted_items = sorted(
+            frequency_dict.items(), key=lambda item: item[1], reverse=True
+        )
 
         # Extract the top k elements based on frequency
         top_k_elements = [item[0] for item in sorted_items[:k]]

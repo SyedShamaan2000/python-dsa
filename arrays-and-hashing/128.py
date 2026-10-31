@@ -73,7 +73,6 @@ class Solution2:
         return max(nums_dict.values())
 
 
-
 class Solution3:
     def longestConsecutive(self, nums: list[int]) -> int:
         nums_set = set(nums)
@@ -90,9 +89,6 @@ class Solution3:
                 longest = max(longest, length)
 
         return longest
-
-
-
 
 
 arr1 = [100, 4, 200, 1, 3, 2]

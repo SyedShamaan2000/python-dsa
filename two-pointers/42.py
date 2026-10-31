@@ -69,7 +69,6 @@ class Solution:
                 r -= 1
                 max_right = max(max_right, height[r])
                 trapped_water += max_right - height[r]
-                
 
         return trapped_water
 

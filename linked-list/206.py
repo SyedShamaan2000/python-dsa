@@ -4,8 +4,6 @@ Given the head of a singly linked list, reverse the list, and return the reverse
 
 # LeetCode 206th problem - https://leetcode.com/problems/reverse-linked-list/description/
 
-from typing import Optional
-
 
 # Definition for singly-linked list.
 class ListNode:
@@ -15,7 +13,7 @@ class ListNode:
 
 
 class Solution:
-    def reverseList(self, head: Optional[ListNode]):
+    def reverseList(self, head: ListNode | None):
         # current = head
         # ll_list = []
         # while current:

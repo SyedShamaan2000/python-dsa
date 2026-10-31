@@ -52,11 +52,11 @@
 import collections
 
 # from collections import defaultdict
-from time_decorator import time_decorator
+# from time_decorator import time_decorator
 
 
 class Solution1:
-    @time_decorator
+    # @time_decorator
     def bruteForeceisValidSudoku(self, board: list[list[str]]) -> bool:
         # brute force solution
         # Check each row
@@ -70,10 +70,7 @@ class Solution1:
             return False
 
         sub_box = self.check_sub_boxes(board)
-        if not sub_box:
-            return False
-
-        return True
+        return sub_box
 
     def basic_row_check(self, l: list[str]) -> bool:
         # for i in range(len(l)):
@@ -145,7 +142,7 @@ class Solution1:
 
 
 class Solution2:
-    @time_decorator
+    # @time_decorator
     def isValidSudoku(self, board: list[list[str]]) -> bool:
         n = len(board)
 
@@ -197,7 +194,7 @@ class Solution2:
 
 
 class Solution3:
-    @time_decorator
+    # @time_decorator
     def isValidSudoku(self, board: list[list[str]]) -> bool:
         rows = collections.defaultdict(set)
         cols = collections.defaultdict(set)

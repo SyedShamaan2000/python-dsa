@@ -12,11 +12,11 @@ find if there exists any pair of elements (A[i], A[j]) such that their sum is eq
 
 # Example I have in my mind: array - [1, 3, 2, 6, 4], target - 9
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int] | None:
         num_dict = {}
         for num in range(len(nums)):
             if target - nums[num] in num_dict:
-                return num_dict[target - nums[num]], num
+                return [num_dict[target - nums[num]], num]
             num_dict[nums[num]] = num
 
 

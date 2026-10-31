@@ -8,9 +8,10 @@ Linked lists are the backbone of advanced structures like stacks, queues, and ad
 
 ### 1. Core Mechanics
 
-The mental model for a linked list is a **treasure hunt**: each clue (node) tells you only where the *next* clue is. There is no map — you must follow the chain from the very first clue (`head`) until you reach one with no next clue (`None`).
+The mental model for a linked list is a **treasure hunt**: each clue (node) tells you only where the _next_ clue is. There is no map — you must follow the chain from the very first clue (`head`) until you reach one with no next clue (`None`).
 
 Each node holds two things:
+
 - `val` — the actual data stored.
 - `next` — a reference (pointer) to the next node in the chain.
 
@@ -88,18 +89,18 @@ class DoublyListNode:
 
 ### 4. Major Operations and Their Complexities
 
-| Operation | Time Complexity | Why |
-|---|---|---|
-| Access node at index `i` | **O(N)** | Must traverse from head — no random access |
-| Search for a value | **O(N)** | Linear scan from head |
-| Insert at head | **O(1)** | Rewire one pointer |
-| Insert at tail | **O(N)** | Must traverse to find the last node |
-| Insert at tail (with tail pointer) | **O(1)** | Direct access if tail is tracked |
-| Insert at position `i` | **O(N)** | Traverse to position first, then O(1) rewire |
-| Delete head | **O(1)** | Move head to `head.next` |
-| Delete a known node | **O(1)** | Rewire previous node's `next` pointer |
-| Delete by value | **O(N)** | Search first, then O(1) delete |
-| Length (no size variable) | **O(N)** | Must count by traversal |
+| Operation                          | Time Complexity | Why                                          |
+| ---------------------------------- | --------------- | -------------------------------------------- |
+| Access node at index `i`           | **O(N)**        | Must traverse from head — no random access   |
+| Search for a value                 | **O(N)**        | Linear scan from head                        |
+| Insert at head                     | **O(1)**        | Rewire one pointer                           |
+| Insert at tail                     | **O(N)**        | Must traverse to find the last node          |
+| Insert at tail (with tail pointer) | **O(1)**        | Direct access if tail is tracked             |
+| Insert at position `i`             | **O(N)**        | Traverse to position first, then O(1) rewire |
+| Delete head                        | **O(1)**        | Move head to `head.next`                     |
+| Delete a known node                | **O(1)**        | Rewire previous node's `next` pointer        |
+| Delete by value                    | **O(N)**        | Search first, then O(1) delete               |
+| Length (no size variable)          | **O(N)**        | Must count by traversal                      |
 
 > ⚠️ **Common Pitfall:** Insertions and deletions are only O(1) **once you already have a pointer to the target position**. Getting to that position still costs O(N). Interviews often hide this — don't conflate "rewiring" cost with "finding" cost.
 
@@ -227,15 +228,15 @@ print(to_list(reverse(head)))   # [5, 4, 3, 2, 1]
 
 ### 7. Efficiency and Complexity Summary
 
-| Scenario | Time | Space | Notes |
-|---|---|---|---|
-| Simple traversal | O(N) | O(1) | Follow `.next` chain |
-| In-place reversal | O(N) | O(1) | Three pointer variables only |
-| Find middle (fast/slow) | O(N) | O(1) | Single pass |
-| Detect cycle (Floyd's) | O(N) | O(1) | No visited set needed |
-| Merge two sorted lists | O(N + M) | O(1) | Pointer rewiring only |
-| Copy list to array, then process | O(N) | O(N) | Sacrifices space for simplicity |
-| Recursive traversal / reversal | O(N) | O(N) | Call stack grows to depth N |
+| Scenario                         | Time     | Space | Notes                           |
+| -------------------------------- | -------- | ----- | ------------------------------- |
+| Simple traversal                 | O(N)     | O(1)  | Follow `.next` chain            |
+| In-place reversal                | O(N)     | O(1)  | Three pointer variables only    |
+| Find middle (fast/slow)          | O(N)     | O(1)  | Single pass                     |
+| Detect cycle (Floyd's)           | O(N)     | O(1)  | No visited set needed           |
+| Merge two sorted lists           | O(N + M) | O(1)  | Pointer rewiring only           |
+| Copy list to array, then process | O(N)     | O(N)  | Sacrifices space for simplicity |
+| Recursive traversal / reversal   | O(N)     | O(N)  | Call stack grows to depth N     |
 
 > ⚠️ **Recursion Warning:** Recursive solutions on linked lists use O(N) **stack space** — this can cause a `RecursionError` on very long lists in Python. Always mention the iterative alternative in an interview.
 
